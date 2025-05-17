@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: #003c80;
+  color: white;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 40px;
+}
+
+.search {
+  flex-grow: 1;
+  margin: 0 20px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+.user-icon {
+  font-size: 24px;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 180px;
+  background-color: #dbe1e8;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #003c80;
+  font-weight: bold;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.apps {
+  background-color: #dbe1e8; /* cinza-claro */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.app-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.app-icons a img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.app-icons a img:hover {
+  transform: scale(1.2);
+}
+
+.noticia {
+  display: flex;
+  background-color: white;
+  border-left: 8px solid;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.fonte {
+  width: 60px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 10px;
+  color: white;
+}
+
+.fonte.g1 {
+  background-color: #c4170c;
+}
+
+.fonte.ge {
+  background-color: #00a550;
+}
+
+.conteudo {
+  padding: 10px;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh; /* Garante altura mínima igual à tela */
+}
+
+.sidebar {
+  width: 180px;
+  background-color: #dbe1e8;
+  padding: 20px;
+  height: 100vh; /* Força ocupar toda a altura da viewport */
+  box-sizing: border-box;
+}
