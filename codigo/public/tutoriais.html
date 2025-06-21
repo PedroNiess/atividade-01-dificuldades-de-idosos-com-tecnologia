@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tutoriais Simples - Idade Conectada</title>
+  <link rel="icon" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #222;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+    }
+    .tutorial-step {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 8px;
+      box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+      display: none;
+    }
+    .tutorial-step.active {
+      display: block;
+    }
+    .tutorial-step h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #007ACC;
+    }
+    .tutorial-step p {
+      margin: 15px 0 0;
+    }
+    .buttons {
+      margin-top: 20px;
+      text-align: center;
+    }
+    button {
+      background-color: #007ACC;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      margin: 0 10px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:disabled {
+      background-color: #999;
+      cursor: default;
+    }
+    a {
+      color: #007ACC;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tutoriais Simples para Você</h1>
+    <p>Siga as instruções passo a passo para aprender a usar seus apps favoritos.</p>
+  </header>
+
+  <section id="tutorials-container">
+    <div class="tutorial-step active" data-step="1">
+      <h2>Como acessar o YouTube</h2>
+      <p>1. Abra seu navegador (como o Google Chrome).</p>
+      <p>2. Na barra de endereços, digite <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">www.youtube.com</a> e pressione Enter.</p>
+      <p>3. Agora você pode assistir seus vídeos favoritos!</p>
+    </div>
+
+    <div class="tutorial-step" data-step="2">
+      <h2>Como usar o Google Chrome</h2>
+      <p>1. O Google Chrome é um programa para navegar na internet.</p>
+      <p>2. Para usar, clique no ícone do Chrome no seu computador.</p>
+      <p>3. Se não tiver instalado, baixe clicando aqui: <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">Baixar Google Chrome</a>.</p>
+    </div>
+
+    <div class="tutorial-step" data-step="3">
+      <h2>Como acessar o Gmail</h2>
+      <p>1. Abra o navegador e digite <a href="https://mail.google.com" target="_blank" rel="noopener noreferrer">mail.google.com</a>.</p>
+      <p>2. Faça login com seu e-mail e senha.</p>
+      <p>3. Você verá suas mensagens e poderá enviar e receber e-mails.</p>
+    </div>
+
+    <div class="tutorial-step" data-step="4">
+      <h2>Como usar o WhatsApp Web</h2>
+      <p>1. Abra seu navegador e vá para <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">web.whatsapp.com</a>.</p>
+      <p>2. No seu celular, abra o WhatsApp e vá em Configurações > Aparelhos conectados.</p>
+      <p>3. Escaneie o código QR que apareceu na tela do computador.</p>
+      <p>4. Agora você pode conversar pelo computador.</p>
+    </div>
+
+    <div class="tutorial-step" data-step="5">
+      <h2>Como fazer uma ligação no telefone</h2>
+      <p>1. Pegue seu celular e abra o aplicativo "Telefone".</p>
+      <p>2. Digite o número que deseja ligar.</p>
+      <p>3. Aperte o botão verde para fazer a ligação.</p>
+    </div>
+
+    <div class="tutorial-step" data-step="6">
+      <h2>Como usar o Microsoft Excel</h2>
+      <p>1. Você pode usar o Excel no seu computador ou online.</p>
+      <p>2. Para usar online, vá para <a href="https://www.office.com/launch/excel" target="_blank" rel="noopener noreferrer">office.com</a>.</p>
+      <p>3. Faça login com sua conta Microsoft.</p>
+      <p>4. Crie ou abra planilhas para organizar seus dados.</p>
+    </div>
+  </section>
+
+  <div class="buttons">
+    <button id="prev-btn" disabled>Anterior</button>
+    <button id="next-btn">Próximo</button>
+  </div>
+
+  <script>
+    const steps = document.querySelectorAll('.tutorial-step');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    let currentStep = 0;
+
+    function showStep(index) {
+      steps.forEach((step, i) => {
+        step.classList.toggle('active', i === index);
+      });
+
+      prevBtn.disabled = index === 0;
+      nextBtn.textContent = index === steps.length - 1 ? 'Terminar' : 'Próximo';
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        alert('Você terminou os tutoriais! Volte sempre que precisar.');
+        currentStep = 0;
+        showStep(currentStep);
+      }
+    });
+
+    showStep(currentStep);
+  </script>
+</body>
+</html>

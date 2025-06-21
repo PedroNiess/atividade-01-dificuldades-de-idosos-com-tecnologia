@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenvolvimento de Interfaces Web | Acesso de Usuário</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-md-6">
+        <div class="card shadow-lg">
+          <div class="card-body p-5">
+            <h3 class="text-center mb-4">Identificação de Usuário</h3>
+            <form id="login-form" method="post">
+              <div class="mb-3">
+                <label for="username" class="form-label">Login</label>
+                <input type="text" name="username" id="username" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+              </div>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#registerModal">
+                  Registrar
+                </button>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Registrar Novo Usuário</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="register-form">
+            <div class="mb-3">
+              <label for="txt_nome" class="form-label">Nome Completo</label>
+              <input type="text" name="txt_nome" id="txt_nome" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="txt_login" class="form-label">Usuário</label>
+              <input type="text" name="txt_login" id="txt_login" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="txt_email" class="form-label">Email</label>
+              <input type="email" name="txt_email" id="txt_email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="txt_senha" class="form-label">Senha</label>
+              <input type="password" name="txt_senha" id="txt_senha" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="txt_senha2" class="form-label">Confirmação de Senha</label>
+              <input type="password" name="txt_senha2" id="txt_senha2" class="form-control" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" id="btn_salvar" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Função para processar o formulário de login
+    function processaFormLogin(event) {
+      event.preventDefault(); // Impede o recarregamento da página
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Valida o login e redireciona se estiver ok
+      if (loginUser(username, password)) {
+        window.location.href = RETURN_URL;
+      } else {
+        alert('Usuário ou senha incorretos');
+      }
+    }
+
+    // Função para salvar o novo usuário
+    function salvaLogin(event) {
+      event.preventDefault();
+      let login = document.getElementById('txt_login').value;
+      let nome = document.getElementById('txt_nome').value;
+      let email = document.getElementById('txt_email').value;
+      let senha = document.getElementById('txt_senha').value;
+      let senha2 = document.getElementById('txt_senha2').value;
+
+      if (senha !== senha2) {
+        alert('As senhas informadas não conferem.');
+        return;
+      }
+
+      // Adiciona o usuário no banco de dados (função deve existir em login.js)
+      addUser(nome, login, senha, email);
+      alert('Usuário salvo com sucesso. Proceda com o login.');
+
+      // Fecha o modal de registro
+      var registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
+      registerModal.hide();
+    }
+
+    // Associa as funções aos eventos
+    document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+    document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
+  </script>
+</body>
+
+</html>

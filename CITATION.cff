@@ -1,0 +1,31 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: Dificuldade de Idosos com Tecnologia 
+authors: Pedro Niess, Vitor Cabral, José Francisco
+  - family-names:Augusto Niess Ferreira 
+    given-names: Pedro
+  - family-names: Cabral
+    given-names: Vitor
+  - family-names: Oliveira Pimentel
+    given-names: José Francisco
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names:Vieira Carneiro 
+    given-names: Rommel
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names:Oliveira Caetano 
+    given-names: João Carlos
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Mara Freitas Diniz
+    given-names:Luciana 
+keywords:
+  - idosos
+  - dificuldade
+  - acesso 
+  - tecnologia
+repository-code: https://github.com/ICEI-PUC-Minas-PMGCC-TI/atividade-01-dificuldades-de-idosos-com-tecnologia.git 
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2022-07-14

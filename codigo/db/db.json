@@ -1,0 +1,74 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Maria Silva",
+      "email": "maria@email.com",
+      "senha": "senha123"
+    },
+    {
+      "id": 2,
+      "nome": "João Souza",
+      "email": "joao@email.com",
+      "senha": "senha456"
+    }
+  ],
+  "aplicativos": [
+    {
+      "id": 1,
+      "nome": "Chrome",
+      "icone": "./assets/images/chrome.png",
+      "link": "googlechrome://"
+    },
+    {
+      "id": 2,
+      "nome": "Excel",
+      "icone": "./assets/images/excel.png",
+      "link": "ms-excel://"
+    },
+    {
+      "id": 3,
+      "nome": "Telefone",
+      "icone": "./assets/images/phone.png",
+      "link": "tel:"
+    },
+    {
+      "id": 4,
+      "nome": "WhatsApp",
+      "icone": "./assets/images/whats.png",
+      "link": "whatsapp://"
+    },
+    {
+      "id": 5,
+      "nome": "YouTube",
+      "icone": "./assets/images/you.png",
+      "link": "youtube://"
+    },
+    {
+      "id": 6,
+      "nome": "Configurações",
+      "icone": "./assets/images/set.png",
+      "link": "settings://"
+    },
+    {
+      "id": 7,
+      "nome": "E-mail",
+      "icone": "./assets/images/gmail.png",
+      "link": "mailto:"
+    }
+  ],
+  "noticias": [
+    {
+      "id": 1,
+      "fonte": "g1",
+      "titulo": "Como o agro brasileiro pode aumentar vendas para China com retaliação dos EUA",
+      "conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+    },
+    {
+      "id": 2,
+      "fonte": "ge",
+      "titulo": "Guarani encaminha chegada de ex-Náutico para zaga e avalia goleiro",
+      "conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+    }
+  ]
+}

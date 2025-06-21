@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro de Notícias</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f2f2; padding: 20px; }
+    .container { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, textarea, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    button { margin-top: 20px; padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .mensagem { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📝 Cadastro de Nova Notícia</h2>
+    <form id="formNoticia">
+      <label for="fonte">Fonte:</label>
+      <select id="fonte" required>
+        <option value="">Selecione...</option>
+        <option value="g1">g1</option>
+        <option value="ge">ge</option>
+        <option value="globo">globo</option>
+        <option value="extra">extra</option>
+      </select>
+
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" required />
+
+      <label for="conteudo">Conteúdo:</label>
+      <textarea id="conteudo" rows="6" required></textarea>
+
+      <button type="submit">Cadastrar Notícia</button>
+    </form>
+    <div class="mensagem" id="mensagem"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('formNoticia');
+    const mensagem = document.getElementById('mensagem');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const novaNoticia = {
+        fonte: document.getElementById('fonte').value,
+        titulo: document.getElementById('titulo').value,
+        conteudo: document.getElementById('conteudo').value
+      };
+
+      fetch('http://localhost:3000/noticias', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(novaNoticia)
+      })
+      .then(response => {
+        if (response.ok) {
+          mensagem.textContent = "✅ Notícia cadastrada com sucesso!";
+          form.reset();
+        } else {
+          mensagem.textContent = "❌ Erro ao cadastrar a notícia.";
+        }
+      })
+      .catch(error => {
+        mensagem.textContent = "❌ Erro ao conectar ao servidor.";
+        console.error(error);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* Definições gerais para o corpo da página */
+body {
+    background-color: #f8f9fa; /* Um cinza bem claro para o fundo */
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Estilizando a barra de navegação */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Ajustes no container principal */
+main.container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Estilo para o cabeçalho do card */
+.card-header {
+    background-color: #e9ecef;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 500;
+}
+
+/* Estilo para a tabela, garantindo que ela se ajuste bem */
+.table {
+    margin-bottom: 0; /* Remove a margem inferior da tabela dentro do card */
+}
+
+/* Efeito de hover mais suave para as linhas da tabela */
+.table-hover > tbody > tr:hover {
+    background-color: rgba(0, 0, 0, 0.045);
+}
+
+/* Deixa o cabeçalho da tabela mais destacado */
+.table thead th {
+    vertical-align: middle;
+}

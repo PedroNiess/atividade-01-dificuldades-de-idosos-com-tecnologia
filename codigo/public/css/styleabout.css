@@ -1,0 +1,88 @@
+/* Estilos Gerais */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f2f5; /* Um fundo cinza claro para a página */
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+/* Barra de Informações com Menu e Dados do Usuário */
+.barra-info {
+    display: flex;
+    justify-content: space-between; /* Alinha o menu à esquerda e os dados do usuário à direita */
+    align-items: center;
+    padding: 0 10%; /* Adiciona espaçamento nas laterais */
+    height: 60px;
+    background-color: #343a40; /* Cor escura para a barra */
+    color: #fff;
+}
+
+/* Estilos do Menu de Navegação */
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block; /* Coloca os itens do menu lado a lado */
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 25px; /* Aumenta a área de clique */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o mouse sobre o link do menu */
+.menu li a:hover {
+    background-color: #495057;
+}
+
+/* Estilo para os dados do usuário (saudação) */
+.dados-usuario {
+    font-size: 0.9rem;
+    padding-right: 20px;
+}
+
+/* Conteúdo Principal da Página "Sobre" */
+main {
+    max-width: 900px;
+    margin: 50px auto; /* Centraliza o bloco de conteúdo com margens verticais */
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+main h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #212529;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #e9ecef; /* Linha sutil abaixo do título */
+}
+
+main p {
+    font-size: 1.1rem;
+    line-height: 1.7; /* Melhora a legibilidade do texto */
+}
