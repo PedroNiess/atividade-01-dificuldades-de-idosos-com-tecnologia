@@ -35,8 +35,13 @@ window.addEventListener('load', function() {
         dropdownMenu.innerHTML = '<li><a class="dropdown-item" href="loginCadastro.html">Login / Cadastrar</a></li>';
     }
 
-    // --- ✅ NOVA LÓGICA PARA CARREGAR NOTÍCIAS ---
+    // --- LÓGICA PARA CARREGAR NOTÍCIAS (Já existente) ---
     carregarNoticias();
+
+    // --- ✅ NOVA LÓGICA DA BARRA DE PESQUISA ---
+    const searchInput = document.getElementById('search-input');
+    // Adiciona um evento que dispara toda vez que o usuário digita algo
+    searchInput.addEventListener('keyup', filtrarNoticias);
 });
 
 
@@ -51,7 +56,6 @@ async function carregarNoticias() {
         const response = await fetch(NOTICIAS_API_URL);
         const noticias = await response.json();
 
-        // Limpa a área de notícias antes de adicionar as novas
         newsContainer.innerHTML = '';
 
         if (noticias.length === 0) {
@@ -59,15 +63,12 @@ async function carregarNoticias() {
             return;
         }
 
-        // Cria o HTML para cada notícia e o adiciona ao container
         noticias.forEach(noticia => {
-            // Cria um link <a> que envolve todo o bloco da notícia
             const linkNoticia = document.createElement('a');
-            linkNoticia.href = noticia.url; // URL de redirecionamento
-            linkNoticia.target = '_blank'; // Abre em uma nova aba
-            linkNoticia.classList.add('noticia-link'); // Adiciona uma classe para estilização, se necessário
+            linkNoticia.href = noticia.url;
+            linkNoticia.target = '_blank';
+            linkNoticia.classList.add('noticia-link');
 
-            // Cria o conteúdo interno da notícia
             linkNoticia.innerHTML = `
                 <div class="noticia">
                     <div class="fonte ${noticia.fonte.toLowerCase()}">${noticia.fonte}</div>
@@ -77,8 +78,6 @@ async function carregarNoticias() {
                     </div>
                 </div>
             `;
-            
-            // Adiciona o link com a notícia ao container na página
             newsContainer.appendChild(linkNoticia);
         });
 
@@ -86,4 +85,23 @@ async function carregarNoticias() {
         console.error('Erro ao carregar notícias:', error);
         newsContainer.innerHTML = '<p>Não foi possível carregar as notícias. Tente novamente mais tarde.</p>';
     }
+}
+
+/**
+ * ✅ NOVA FUNÇÃO: Filtra os cards de notícia com base no texto da busca.
+ */
+function filtrarNoticias() {
+    const termoBusca = document.getElementById('search-input').value.toLowerCase();
+    const noticias = document.querySelectorAll('#news-container .noticia-link');
+
+    noticias.forEach(noticia => {
+        const titulo = noticia.querySelector('h3').textContent.toLowerCase();
+        
+        // Se o título da notícia incluir o termo da busca, mostra o card. Senão, esconde.
+        if (titulo.includes(termoBusca)) {
+            noticia.style.display = 'block';
+        } else {
+            noticia.style.display = 'none';
+        }
+    });
 }
