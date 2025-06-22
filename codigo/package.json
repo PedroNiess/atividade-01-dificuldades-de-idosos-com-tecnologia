@@ -1,0 +1,12 @@
+{
+  "name": "idade-conectada-server",
+  "version": "1.0.0",
+  "description": "Servidor para o projeto Idade Conectada",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch db/db.json --static ./public --port 3000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.3"
+  }
+}
