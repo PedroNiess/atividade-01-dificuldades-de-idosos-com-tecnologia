@@ -35,7 +35,7 @@ header {
   font-size: 24px;
 }
 
-.container {
+.container-app {
   display: flex;
 }
 
@@ -116,6 +116,16 @@ header {
   background-color: #00a550;
 }
 
+.fonte.globo {
+  background-color: #00599D;
+  border-color: #00599D;
+}
+
+.fonte.extra {
+  background-color: #4A4A4A;
+  border-color: #4A4A4A;
+}
+
 .conteudo {
   padding: 10px;
 }
@@ -136,4 +146,9 @@ html, body {
   padding: 20px;
   height: 100vh; /* Força ocupar toda a altura da viewport */
   box-sizing: border-box;
+}
+
+.noticia-link {
+  text-decoration: none; /* Remove o sublinhado */
+  color: inherit;         /* Faz o texto herdar a cor do elemento pai (preto/cinza escuro) */
 }

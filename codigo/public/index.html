@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,70 +8,71 @@
   <link rel="stylesheet" href="./css/stylehome.css">
   <link rel="icon" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <img src="./images/logo.png" alt="Logo" class="logo">
-    <input type="text" placeholder="Procurar app..." class="search">
-    <div class="user-icon">👤</div>
+    <input type="text" placeholder="Pesquisar notícia" class="search">
+    <div class="dropdown">
+      <a href="#" class="user-icon dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        👤
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" id="user-dropdown-menu">
+      </ul>
+    </div>
   </header>
 
-  <div class="container">
+  <div class="container-app">
     <nav class="sidebar">
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Tutoriais</a></li>
-        <li><a href="#">Feedback</a></li>
-        <li><a href="#">Sair</a></li>
+        <li><a href="./tutoriais.html">Tutoriais</a></li>
+        <li><a href="./about.html">Sobre</a></li>
       </ul>
     </nav>
     <main class="main-content">
-  <!-- Seção de Apps -->
-  <section class="apps">
-    <h2>Acesso rápido a apps:</h2>
-    <div class="app-icons">
-      <a href="https://www.google.com/chrome/" target="_blank">
-        <img src="./images/chrome.png" alt="Chrome">
-      </a>
-      <a href="https://www.office.com/launch/excel" target="_blank">
-        <img src="./images/excel.png" alt="Excel">
-      </a>
-      <a href="tel:123456789">
-        <img src="./images/phone.png" alt="Telefone">
-      </a>
-      <a href="https://web.whatsapp.com/" target="_blank">
-        <img src="./images/whats.png" alt="WhatsApp">
-      </a>
-      <a href="https://www.youtube.com/" target="_blank">
-        <img src="./images/you.png" alt="YouTube">
-      </a>
-      <a href="settings.html">
-        <img src="./images/set.png" alt="Configurações">
-      </a>
-      <a href="https://mail.google.com/" target="_blank">
-        <img src="./images/gmail.png" alt="E-mail">
-      </a>
-    </div>
-  </section>
-  <!-- Seção de Notícias -->
-  <section class="news">
+      <!-- Seção de Apps -->
+      <section class="apps">
+        <h2>Acesso rápido a apps:</h2>
+        <div class="app-icons">
+          <a href="https://www.google.com/chrome/" target="_blank">
+            <img src="./images/chrome.png" alt="Chrome">
+          </a>
+          <a href="https://www.office.com/launch/excel" target="_blank">
+            <img src="./images/excel.png" alt="Excel">
+          </a>
+          <a href="tel:123456789">
+            <img src="./images/phone.png" alt="Telefone">
+          </a>
+          <a href="https://web.whatsapp.com/" target="_blank">
+            <img src="./images/whats.png" alt="WhatsApp">
+          </a>
+          <a href="https://www.youtube.com/" target="_blank">
+            <img src="./images/you.png" alt="YouTube">
+          </a>
+          <a href="settings.html">
+            <img src="./images/set.png" alt="Configurações">
+          </a>
+          <a href="https://mail.google.com/" target="_blank">
+            <img src="./images/gmail.png" alt="E-mail">
+          </a>
+        </div>
+      </section>
+      <!-- Seção de Notícias -->
+     <section class="news">
     <h2>Notícias:</h2>
-    <div class="noticia">
-      <div class="fonte g1">g1</div>
-      <div class="conteudo">
-        <h3>Como o agro brasileiro pode aumentar vendas para China com retaliação dos EUA</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-      </div>
-    </div>
-    <div class="noticia">
-      <div class="fonte ge">ge</div>
-      <div class="conteudo">
-        <h3>Guarani encaminha chegada de ex-Náutico para zaga e avalia goleiro</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-      </div>
-    </div>
-  </section>
-</main>
+    <div id="news-container"></div>
+</section>
+    </main>
 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/index.js"></script>
+
+    </body>
