@@ -78,53 +78,56 @@
     </div>
   </div>
 
-  <script src="../../assets/js/login.js"></script>
+<script src="./js/login.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <script>
+ <script>
+    // ✅ FUNÇÃO ALTERADA PARA SER 'async' E USAR 'await'
     // Função para processar o formulário de login
-    function processaFormLogin(event) {
-      event.preventDefault(); // Impede o recarregamento da página
-      var username = document.getElementById('username').value;
-      var password = document.getElementById('password').value;
+    async function processaFormLogin(event) {
+        event.preventDefault();
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
 
-      // Valida o login e redireciona se estiver ok
-      if (loginUser(username, password)) {
-        window.location.href = RETURN_URL;
-      } else {
-        alert('Usuário ou senha incorretos');
-      }
+        // "Espera" a função loginUser terminar antes de continuar
+        const sucesso = await loginUser(username, password);
+
+        if (sucesso) {
+            window.location.href = HOME_URL;
+        } else {
+            alert('Usuário ou senha incorretos');
+        }
     }
 
     // Função para salvar o novo usuário
     function salvaLogin(event) {
-      event.preventDefault();
-      let login = document.getElementById('txt_login').value;
-      let nome = document.getElementById('txt_nome').value;
-      let email = document.getElementById('txt_email').value;
-      let senha = document.getElementById('txt_senha').value;
-      let senha2 = document.getElementById('txt_senha2').value;
+        event.preventDefault();
+        let login = document.getElementById('txt_login').value;
+        let nome = document.getElementById('txt_nome').value;
+        let email = document.getElementById('txt_email').value;
+        let senha = document.getElementById('txt_senha').value;
+        let senha2 = document.getElementById('txt_senha2').value;
 
-      if (senha !== senha2) {
-        alert('As senhas informadas não conferem.');
-        return;
-      }
-
-      // Adiciona o usuário no banco de dados (função deve existir em login.js)
-      addUser(nome, login, senha, email);
-      alert('Usuário salvo com sucesso. Proceda com o login.');
-
-      // Fecha o modal de registro
-      var registerModal = bootstrap.Modal.getInstance(document.getElementById('registerModal'));
-      registerModal.hide();
+        if (senha !== senha2) {
+            alert('As senhas informadas não conferem.');
+            return;
+        }
+        
+        addUser(nome, login, senha, email);
+        
+        var myModalEl = document.getElementById('registerModal');
+        var modal = bootstrap.Modal.getInstance(myModalEl);
+        if (modal) {
+            modal.hide();
+        }
     }
 
     // Associa as funções aos eventos
     document.getElementById('login-form').addEventListener('submit', processaFormLogin);
     document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
-  </script>
+</script>
 </body>
 
 </html>
