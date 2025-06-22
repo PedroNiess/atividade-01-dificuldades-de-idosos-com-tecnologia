@@ -1,16 +1,12 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "nome": "Maria Silva",
-      "email": "maria@email.com",
-      "senha": "senha123"
-    },
-    {
-      "id": 2,
-      "nome": "João Souza",
-      "email": "joao@email.com",
-      "senha": "senha456"
+      "nome": "alexandre augusto",
+      "login": "teste",
+      "senha": "teste",
+      "email": "pedrinhoferreiran2006@gmail.com",
+      "tipo": "admin",
+      "id": 6
     }
   ],
   "aplicativos": [
@@ -59,16 +55,32 @@
   ],
   "noticias": [
     {
-      "id": 1,
+      "titulo": "EUA entram na guerra: como é a bomba 'destruidora de bunkers' que pode acabar com o programa nuclear iraniano",
+      "descricao": "Arma é a única capaz de penetrar no solo e destruir construções dezenas de metros abaixo da terra, como as instalações nucleares de Fordo, no Irã. Apenas os EUA possuem a bomba e uma aeronave capaz de lançá-la.",
       "fonte": "g1",
-      "titulo": "Como o agro brasileiro pode aumentar vendas para China com retaliação dos EUA",
-      "conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+      "url": "https://g1.globo.com/mundo/noticia/2025/06/21/eua-entra-na-guerra-como-e-a-bomba-destruidora-de-bunkers-que-pode-acabar-com-o-programa-nuclear-iraniano.ghtml",
+      "id": 1
     },
     {
-      "id": 2,
-      "fonte": "ge",
-      "titulo": "Guarani encaminha chegada de ex-Náutico para zaga e avalia goleiro",
-      "conteudo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+      "titulo": "Polícia diz que extintor não funcionou em balão que pegou fogo, caiu e matou 8 pessoas em SC",
+      "descricao": "Informação foi repassada em depoimento pelo piloto da estrutura que sobreviveu. Outros cinco sobreviventes foram ouvidos pelas autoridades.",
+      "fonte": "g1",
+      "url": "https://g1.globo.com/sc/santa-catarina/noticia/2025/06/21/extintor-nao-funcionou-balao-queda-praia-grande-diz-policia.ghtml",
+      "id": 3
+    },
+    {
+      "titulo": "Chuva diminui no RS, mas 7,3 mil pessoas ainda estão fora de casa",
+      "descricao": "Cerca de 125 cidades gaúchas tiveram prejuízo por causa da chuva. Em Porto Alegre, o nível do Lago Guaíba – onde deságuam rios de várias regiões do estado – segue subindo.",
+      "fonte": "globo",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2025/06/21/chuva-diminui-no-rs-mas-73-mil-pessoas-ainda-estao-fora-de-casa.ghtml",
+      "id": 4
+    },
+    {
+      "titulo": "Chery desafia a BYD com elétrico que roda 405 km por até R$ 53 mil; veja",
+      "descricao": "Chery lança elétrico que roda 405 km e custa o equivalente a R$ 50 mil. A novidade elétrica pode dificultar as vendas da BYD. O QQ Domi é um hatch elétrico que tem 3,70 metros de comprimento e 405 km de autonomia elétrica. ",
+      "fonte": "extra",
+      "url": "https://www.cnnbrasil.com.br/auto/chery-desafia-a-byd-com-eletrico-que-roda-405-km-por-ate-r-53-mil-veja/",
+      "id": 5
     }
   ]
 }
