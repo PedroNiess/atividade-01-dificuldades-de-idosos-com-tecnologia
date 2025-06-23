@@ -1,18 +1,18 @@
 {
   "usuarios": [
     {
-      "nome": "alexandre augusto",
-      "login": "teste",
-      "senha": "teste",
+      "nome": "Pedro Niess",
+      "login": "admin",
+      "senha": "admin",
       "email": "pedrinhoferreiran2006@gmail.com",
       "tipo": "admin",
-      "id": "6"
+      "id": "1"
     },
     {
-      "id": "6236",
-      "nome": "Pedro",
-      "login": "Pedro",
-      "senha": "teste",
+      "id": "2",
+      "nome": "Alexandre Niess",
+      "login": "user",
+      "senha": "user",
       "email": "pedrinhoferreiran2006@gmail.com",
       "tipo": "user"
     }
