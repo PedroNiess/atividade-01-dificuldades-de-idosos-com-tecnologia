@@ -3,7 +3,7 @@
 
 // --- CONFIGURAÇÃO ---
 const LOGIN_URL = '/loginCadastro.html';
-const HOME_URL = '/admin.html';
+const HOME_URL = '/';
 const PROTECTED_PAGES = ['/admin.html', '/cadastroNoticias.html'];
 const API_URL = 'https://atividade-01-dificuldades-de-idosos-com.onrender.com/usuarios';
 
