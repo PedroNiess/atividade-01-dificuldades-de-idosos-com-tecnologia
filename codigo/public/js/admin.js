@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- CONSTANTES E VARIÁVEIS GLOBAIS ---
-    const API_BASE_URL = 'http://localhost:3000';
+    const API_BASE_URL = 'https://atividade-01-dificuldades-de-idosos-com.onrender.com';
     const formNoticia = document.getElementById('form-noticia');
     const noticiaIdInput = document.getElementById('noticia-id');
     const noticiaTituloInput = document.getElementById('noticia-titulo');

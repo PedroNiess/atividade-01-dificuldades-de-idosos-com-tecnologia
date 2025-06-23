@@ -50,7 +50,7 @@ window.addEventListener('load', function() {
  */
 async function carregarNoticias() {
     const newsContainer = document.getElementById('news-container');
-    const NOTICIAS_API_URL = 'http://localhost:3000/noticias';
+    const NOTICIAS_API_URL = 'https://atividade-01-dificuldades-de-idosos-com.onrender.com/noticias';
 
     try {
         const response = await fetch(NOTICIAS_API_URL);
