@@ -5,7 +5,7 @@
 const LOGIN_URL = '/codigo/public/loginCadastro.html';
 const HOME_URL = '/codigo/public/admin.html';
 const PROTECTED_PAGES = ['/admin.html', '/cadastroNoticias.html'];
-const API_URL = 'http://localhost:3000/usuarios';
+const API_URL = 'https://atividade-01-dificuldades-de-idosos-com.onrender.com/usuarios';
 
 // --- VARIÁVEIS GLOBAIS ---
 let usuarioCorrente = {};
