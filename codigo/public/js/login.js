@@ -2,8 +2,8 @@
 // Versão ajustada para o projeto "Idade Conectada"
 
 // --- CONFIGURAÇÃO ---
-const LOGIN_URL = '/codigo/public/loginCadastro.html';
-const HOME_URL = '/codigo/public/admin.html';
+const LOGIN_URL = '/loginCadastro.html';
+const HOME_URL = '/admin.html';
 const PROTECTED_PAGES = ['/admin.html', '/cadastroNoticias.html'];
 const API_URL = 'https://atividade-01-dificuldades-de-idosos-com.onrender.com/usuarios';
 
